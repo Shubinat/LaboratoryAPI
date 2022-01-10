@@ -1,0 +1,24 @@
+@using LaboratoryAPI.Areas.HelpPage.ModelDescriptions
+@model EnumTypeModelDescription
+
+<p>Возможные значения перечисления:</p>
+
+<table class="help-page-table">
+    <thead>
+        <tr><th>Название</th><th>Значение</th><th>Описание</th></tr>
+    </thead>
+    <tbody>
+        @foreach (EnumValueDescription value in Model.Values)
+        {
+            <tr>
+                <td class="enum-name"><b>@value.Name</b></td>
+                <td class="enum-value">
+                    <p>@value.Value</p>
+                </td>
+                <td class="enum-description">
+                    <p>@value.Documentation</p>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,4 @@
+@using LaboratoryAPI.Areas.HelpPage.ModelDescriptions
+@model KeyValuePairModelDescription
+Пара @Html.DisplayFor(m => Model.KeyModelDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.KeyModelDescription }) [key]
+и @Html.DisplayFor(m => Model.ValueModelDescription.ModelType, "ModelDescriptionLink", new { modelDescription = Model.ValueModelDescription }) [value]
