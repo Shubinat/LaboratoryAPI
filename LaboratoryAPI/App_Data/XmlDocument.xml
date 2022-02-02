@@ -749,12 +749,12 @@
         </member>
         <member name="P:LaboratoryAPI.Models.UserServiceModel.Date">
             <summary>
-            Date of receipt
+            Date of receipt.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserServiceModel.Service">
             <summary>
-            Polyclinic service
+            Polyclinic service.
             </summary>
         </member>
     </members>

@@ -66,12 +66,13 @@ namespace LaboratoryAPI.Controllers
             try
             {
                 var uservice = db.UserServices.Add(userService);
+                db.SaveChanges();
                 return Ok(new UserServiceModel(uservice));
 
             }
             catch (Exception)
             {
-                return NotFound();
+                return BadRequest();
             }
         }
 
@@ -86,6 +87,7 @@ namespace LaboratoryAPI.Controllers
             {
                 var userService = db.UserServices.Find(userServiceID);
                 db.UserServices.Remove(userService);
+                db.SaveChanges();
                 return Ok(new UserServiceModel(userService));
 
             }

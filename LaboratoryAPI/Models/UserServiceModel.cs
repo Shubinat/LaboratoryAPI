@@ -38,7 +38,8 @@ namespace LaboratoryAPI.Models
         public UserServiceModel(UserService userService)
         {
             ID = userService.ID;
-            Service = new ServiceModel(userService.Service);
+
+            Service = new ServiceModel((new Entities.LaboratoryDatabaseEntities()).Services.Find(userService.ServiceID));
             Date = userService.Date;
             ServiceID = userService.ServiceID;
             UserID = userService.UserID;
