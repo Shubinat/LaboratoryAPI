@@ -7,24 +7,24 @@ using System.Web;
 namespace LaboratoryAPI.Models
 {
     /// <summary>
-    /// Сущность представляющяя сервис поликлиники.
+    /// Entity representing the polyclinic service.
     /// </summary>
     public class ServiceModel
     {
         /// <summary>
-        /// ID сервиса.
+        /// ID service.
         /// </summary>
         public int ID { get; set; }
         /// <summary>
-        /// Название.
+        /// Name.
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Описание.
+        /// Description.
         /// </summary>
         public string Description { get; set; }
         /// <summary>
-        /// Цена.
+        /// Price.
         /// </summary>
         public Nullable<decimal> Price { get; set; }
 

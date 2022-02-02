@@ -17,21 +17,22 @@ namespace LaboratoryAPI.Controllers
     {
         private LaboratoryDatabaseEntities db = new LaboratoryDatabaseEntities();
 
-        /// <summary>
-        /// Получение списка новостей.
+        /// <summary> 
+        ///Getting a list of news 
         /// </summary>
-        /// <returns>Коллекция новостей.</returns>
+        /// <returns>Collecton of news.</returns>
         public IHttpActionResult GetNews()
         {
             return Ok(db.News.ToList().ConvertAll(n => new NewsModel(n)).OrderByDescending(n => n.CreatingDate).ToList());
         }
 
         /// <summary>
-        /// Получение новости.
+        /// Getting a news.
         /// </summary>
-        /// <param name="id">ID новости.</param>
-        /// <returns>При успешном запросе - новость с данным ID.
-        /// При неуспешном запросе - NotFound.</returns>
+        /// <param name="id">ID news.</param>
+        /// <returns>
+        ///If the request is successful, the news with the given ID.
+        /// If the request fails - NotFound.</returns>
         [ResponseType(typeof(News))]
         public IHttpActionResult GetNews(int id)
         {

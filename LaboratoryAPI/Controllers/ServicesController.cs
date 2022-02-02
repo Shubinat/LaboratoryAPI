@@ -17,21 +17,21 @@ namespace LaboratoryAPI.Controllers
     {
         private LaboratoryDatabaseEntities db = new LaboratoryDatabaseEntities();
 
-        /// <summary>
-        /// Получение списка услуг.
+        /// <summary> 
+        /// Getting a list of services 
         /// </summary>
-        /// <returns>Коллекция услуг.</returns>
+        /// <returns>Collecton of services.</returns>
         public IHttpActionResult GetServices()
         {
             return Ok(db.Services.ToList().ConvertAll(s => new ServiceModel(s)));
         }
 
         /// <summary>
-        /// Получение услуги.
+        /// Getting a service.
         /// </summary>
-        /// <param name="id">ID услуги.</param>
-        /// <returns>При успешном запросе - услугу с данным ID.
-        /// При неуспешном запросе - NotFound.</returns>
+        /// <param name="id">ID service.</param>
+        /// <returns>If the request is successful, the service with the given ID.
+        /// On unsuccessful request - NotFound.</returns>
         [ResponseType(typeof(Service))]
         public IHttpActionResult GetService(int id)
         {

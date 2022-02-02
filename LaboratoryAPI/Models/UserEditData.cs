@@ -7,12 +7,12 @@ using System.Text;
 namespace LaboratoryAPI.Models
 {
     /// <summary>
-    /// Сущность используемая для редактирования пользователя.
+    /// Entity what uses for edit user data.
     /// </summary>
     public class UserEditData
     {
         /// <summary>
-        /// Пароль.
+        /// Password.
         /// </summary>
         public string Password { get; set; }
         /// <summary>
@@ -20,20 +20,20 @@ namespace LaboratoryAPI.Models
         /// </summary>
         public string Email { get; set; }
         /// <summary>
-        /// Номер телефона.
+        /// Phone number.
         /// </summary>
         public string PhoneNumber { get; set; }
 
         /// <summary>
-        /// Имеет-ли пароль.
+        /// Has password.
         /// </summary>
         internal bool HasPassword => !string.IsNullOrWhiteSpace(Password);
         /// <summary>
-        /// Имеет-ли Email.
+        /// Has email.
         /// </summary>
         internal bool HasEmail => !string.IsNullOrWhiteSpace(Email);
         /// <summary>
-        /// Имеет-ли номер телефона.
+        /// Has phone number.
         /// </summary>
         internal bool HasPhoneNumber => !string.IsNullOrWhiteSpace(PhoneNumber);
     }

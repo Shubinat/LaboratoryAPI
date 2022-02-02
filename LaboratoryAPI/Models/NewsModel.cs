@@ -4,24 +4,24 @@ using System;
 namespace LaboratoryAPI.Models
 {
     /// <summary>
-    /// Сущность представляющяя новость поликлиники.
+    /// Entity representing the news of the polyclinic.
     /// </summary>
     public class NewsModel
     {
         /// <summary>
-        /// ID новости.
+        /// ID news.
         /// </summary>
         public int ID { get; set; }
         /// <summary>
-        /// Заголовок.
+        /// Title.
         /// </summary>
         public string Title { get; set; }
         /// <summary>
-        /// Описание.
+        /// Description.
         /// </summary>
         public string Description { get; set; }
         /// <summary>
-        /// Дата публикации.
+        /// Creating date.
         /// </summary>
         public DateTime CreatingDate { get; set; }
 

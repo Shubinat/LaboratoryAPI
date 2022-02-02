@@ -482,156 +482,159 @@
             <param name="documentPath">The physical path to XML document.</param>
         </member>
         <member name="M:LaboratoryAPI.Controllers.NewsController.GetNews">
-            <summary>
-            Получение списка новостей.
-            </summary>
-            <returns>Коллекция новостей.</returns>
+             <summary> 
+            Getting a list of news 
+             </summary>
+             <returns>Collecton of news.</returns>
         </member>
         <member name="M:LaboratoryAPI.Controllers.NewsController.GetNews(System.Int32)">
-            <summary>
-            Получение новости.
-            </summary>
-            <param name="id">ID новости.</param>
-            <returns>При успешном запросе - новость с данным ID.
-            При неуспешном запросе - NotFound.</returns>
+             <summary>
+             Getting a news.
+             </summary>
+             <param name="id">ID news.</param>
+             <returns>
+            If the request is successful, the news with the given ID.
+             If the request fails - NotFound.</returns>
         </member>
         <member name="M:LaboratoryAPI.Controllers.ServicesController.GetServices">
-            <summary>
-            Получение списка услуг.
+            <summary> 
+            Getting a list of services 
             </summary>
-            <returns>Коллекция услуг.</returns>
+            <returns>Collecton of services.</returns>
         </member>
         <member name="M:LaboratoryAPI.Controllers.ServicesController.GetService(System.Int32)">
             <summary>
-            Получение услуги.
+            Getting a service.
             </summary>
-            <param name="id">ID услуги.</param>
-            <returns>При успешном запросе - услугу с данным ID.
-            При неуспешном запросе - NotFound.</returns>
+            <param name="id">ID service.</param>
+            <returns>If the request is successful, the service with the given ID.
+            On unsuccessful request - NotFound.</returns>
         </member>
         <member name="M:LaboratoryAPI.Controllers.UsersController.Authorization(LaboratoryAPI.Models.ShortUser)">
             <summary>
-            Авторизация пользователя.
+            Authorization.
             </summary>
-            <param name="shortUser">Объект имеющий свойства Login и Password.</param>
-            <returns>При успешной авторизации - Пользователя с данным логином и паролем.
-            При неуспешной авторизации  - NotFound.</returns>
+            <param name="shortUser">Object with Login and Password properties.</param>
+            <returns>After successful authorization - the User with the given login and password.
+            In case of unsuccessful authorization - NotFound.</returns>
         </member>
         <member name="M:LaboratoryAPI.Controllers.UsersController.Registration(LaboratoryAPI.Entities.User)">
             <summary>
-            Регистрация пользователя.
+            Registration.
             </summary>
-            <param name="user">Пользователь, которого нужно зарегистрировать.</param>
-            <returns>Ok - При успешной регистрации.
-            BadRequest - При ошибке регистрации.</returns>
+            <param name="user">User to register.</param>
+            <returns>Ok - On successful registration.
+            BadRequest - On registration failure.</returns>
         </member>
         <member name="M:LaboratoryAPI.Controllers.UsersController.PutUser(System.Int32,LaboratoryAPI.Models.UserEditData)">
             <summary>
-            Редактирует информацию о пользователе (Номер телефона, Email, Пароль).
+            Edits information about the user (Phone number, Email, Password).
             </summary>
-            <param name="userID">ID пользователя.</param>
-            <param name="user">Пользователь с изменненой информацией.</param>
-            <returns>Пользователя с редактированной информацией. В ином случае NotFound.</returns>
+            <param name="userID">User ID.</param>
+            <param name="user">User with modified information.</param>
+            <returns>User with edited information. Otherwise NotFound.</returns>
         </member>
-        <member name="M:LaboratoryAPI.Controllers.UsersController.GetServices(System.Int32)">
-            <summary>
-            Получение списка сервисов у пользователя.
+        <member name="M:LaboratoryAPI.Controllers.UserServicesController.GetUserServices(System.Int32)">
+            <summary> 
+            Getting a list of user's services.
             </summary>
-            <param name="userID">ID пользователя.</param>
-            <returns>При успешном запросе - список услуг у пользвателя.
-            При неуспешном запросе - NotFound.</returns>
+            <param name="userID">User ID</param>
+            <returns>Collecton of UserService.</returns>
         </member>
-        <member name="M:LaboratoryAPI.Controllers.UsersController.AddService(System.Int32,System.Int32)">
-            <summary>
-            Добавление нового сервиcа в список пользователя.
+        <member name="M:LaboratoryAPI.Controllers.UserServicesController.GetUserService(System.Int32)">
+            <summary> 
+            Getting an user's service.
             </summary>
-            <param name="userID">ID пользователя.</param>
-            <param name="serviceID">ID сервиса.</param>
-            <returns>При успешном запросе - добавленную услугу.
-            При неуспешном запросе - NotFound.</returns>
+            <param name="userServiceID">UserService ID</param>
+            <returns>Collecton of UserService.</returns>
         </member>
-        <member name="M:LaboratoryAPI.Controllers.UsersController.DeleteService(System.Int32,System.Int32)">
-            <summary>
-            Удаление сервиcа из списка пользователя.
+        <member name="M:LaboratoryAPI.Controllers.UserServicesController.AddUserService(LaboratoryAPI.Entities.UserService)">
+            <summary> 
+            Add an user's service.
             </summary>
-            <param name="userID">ID пользователя.</param>
-            <param name="serviceID">ID сервиса.</param>
-            <returns>При успешном запросе - удаленную услугу.
-            При неуспешном запросе - NotFound.</returns>
+            <param name="userService">UserService</param>
+            <returns>Added UserService.</returns>
+        </member>
+        <member name="M:LaboratoryAPI.Controllers.UserServicesController.DeleteUserService(System.Int32)">
+            <summary> 
+            Deleting an user's service.
+            </summary>
+            <param name="userServiceID">UserService ID</param>
+            <returns>Deleted UserService.</returns>
         </member>
         <member name="T:LaboratoryAPI.Models.NewsModel">
             <summary>
-            Сущность представляющяя новость поликлиники.
+            Entity representing the news of the polyclinic.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.NewsModel.ID">
             <summary>
-            ID новости.
+            ID news.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.NewsModel.Title">
             <summary>
-            Заголовок.
+            Title.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.NewsModel.Description">
             <summary>
-            Описание.
+            Description.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.NewsModel.CreatingDate">
             <summary>
-            Дата публикации.
+            Creating date.
             </summary>
         </member>
         <member name="T:LaboratoryAPI.Models.ServiceModel">
             <summary>
-            Сущность представляющяя сервис поликлиники.
+            Entity representing the polyclinic service.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.ServiceModel.ID">
             <summary>
-            ID сервиса.
+            ID service.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.ServiceModel.Name">
             <summary>
-            Название.
+            Name.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.ServiceModel.Description">
             <summary>
-            Описание.
+            Description.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.ServiceModel.Price">
             <summary>
-            Цена.
+            Price.
             </summary>
         </member>
         <member name="T:LaboratoryAPI.Models.ShortUser">
             <summary>
-            Сущность представляющяя пользователя для регистрации
+            Entity uses for user's authorization.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.ShortUser.Login">
             <summary>
-            Логин пользователя
+            User login.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.ShortUser.Password">
             <summary>
-            Пароль пользователя
+            User password.
             </summary>
         </member>
         <member name="T:LaboratoryAPI.Models.UserEditData">
             <summary>
-            Сущность используемая для редактирования пользователя.
+            Entity what uses for edit user data.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserEditData.Password">
             <summary>
-            Пароль.
+            Password.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserEditData.Email">
@@ -641,87 +644,117 @@
         </member>
         <member name="P:LaboratoryAPI.Models.UserEditData.PhoneNumber">
             <summary>
-            Номер телефона.
+            Phone number.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserEditData.HasPassword">
             <summary>
-            Имеет-ли пароль.
+            Has password.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserEditData.HasEmail">
             <summary>
-            Имеет-ли Email.
+            Has email.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserEditData.HasPhoneNumber">
             <summary>
-            Имеет-ли номер телефона.
+            Has phone number.
             </summary>
         </member>
         <member name="T:LaboratoryAPI.Models.UserModel">
             <summary>
-            Сущность пользователя.
+            User model.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.ID">
             <summary>
-            ID пользователя.
+            ID user.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.Login">
             <summary>
-            Логин.
+            Login.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.Password">
             <summary>
-            Пароль.
+            Password.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.Surname">
             <summary>
-            Фамилия.
+            Surname.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.Name">
             <summary>
-            Имя.
+            Name.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.Patronimyc">
             <summary>
-            Отчество.
+            Patronimyc.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.BirthDate">
             <summary>
-            Дата рождения.
+            Date of Birth.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.PolicyNumber">
             <summary>
-            Номер полиса.
+            Number of Policy.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.PassportNumber">
             <summary>
-            Номер паспорта.
+            Number of Passport.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.PassportSeria">
             <summary>
-            Серия паспорта.
+            Seria of Passport.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.PhoneNumber">
             <summary>
-            Номер телефона.
+            Number of Phone.
             </summary>
         </member>
         <member name="P:LaboratoryAPI.Models.UserModel.Email">
             <summary>
             Email.
+            </summary>
+        </member>
+        <member name="T:LaboratoryAPI.Models.UserServiceModel">
+            <summary>
+            Entity representing the user's service.
+            </summary>
+        </member>
+        <member name="P:LaboratoryAPI.Models.UserServiceModel.ID">
+            <summary>
+            ID.
+            </summary>
+        </member>
+        <member name="P:LaboratoryAPI.Models.UserServiceModel.ServiceID">
+            <summary>
+            Service ID.
+            </summary>
+        </member>
+        <member name="P:LaboratoryAPI.Models.UserServiceModel.UserID">
+            <summary>
+            User ID.
+            </summary>
+        </member>
+        <member name="P:LaboratoryAPI.Models.UserServiceModel.Date">
+            <summary>
+            Date of receipt
+            </summary>
+        </member>
+        <member name="P:LaboratoryAPI.Models.UserServiceModel.Service">
+            <summary>
+            Polyclinic service
             </summary>
         </member>
     </members>

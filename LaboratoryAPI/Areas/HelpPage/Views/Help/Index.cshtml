@@ -6,7 +6,7 @@
 @model Collection<ApiDescription>
 
 @{
-    ViewBag.Title = "Страница Информации API";
+    ViewBag.Title = "API Information Page";
 
     // Group APIs by controller
     ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
@@ -23,9 +23,11 @@
 <div id="body" class="help-page">
     <section class="featured">
         <div class="content-wrapper">
-            <h2>Введение</h2>
+            <h2>
+                Introduction
+            </h2>
             <p>
-                API представляющая базу данный поликлиники. Ниже представлены основные запросы для работы.
+                API representing the polyclinic database. Below are the main requests for work.
             </p>
         </div>
     </section>

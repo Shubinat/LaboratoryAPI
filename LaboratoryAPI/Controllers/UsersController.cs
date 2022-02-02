@@ -18,11 +18,11 @@ namespace LaboratoryAPI.Controllers
         private LaboratoryDatabaseEntities db = new LaboratoryDatabaseEntities();
 
         /// <summary>
-        /// Авторизация пользователя.
+        /// Authorization.
         /// </summary>
-        /// <param name="shortUser">Объект имеющий свойства Login и Password.</param>
-        /// <returns>При успешной авторизации - Пользователя с данным логином и паролем.
-        /// При неуспешной авторизации  - NotFound.</returns>
+        /// <param name="shortUser">Object with Login and Password properties.</param>
+        /// <returns>After successful authorization - the User with the given login and password.
+        /// In case of unsuccessful authorization - NotFound.</returns>
         [Route("api/Users/Autorization")]
         public IHttpActionResult Authorization(ShortUser shortUser)
         {
@@ -36,11 +36,11 @@ namespace LaboratoryAPI.Controllers
             }
         }
         /// <summary>
-        /// Регистрация пользователя.
+        /// Registration.
         /// </summary>
-        /// <param name="user">Пользователь, которого нужно зарегистрировать.</param>
-        /// <returns>Ok - При успешной регистрации.
-        /// BadRequest - При ошибке регистрации.</returns>
+        /// <param name="user">User to register.</param>
+        /// <returns>Ok - On successful registration.
+        /// BadRequest - On registration failure.</returns>
         [Route("api/Users/Registration")]
         public IHttpActionResult Registration(User user)
         {
@@ -62,11 +62,11 @@ namespace LaboratoryAPI.Controllers
         }
 
         /// <summary>
-        /// Редактирует информацию о пользователе (Номер телефона, Email, Пароль).
+        /// Edits information about the user (Phone number, Email, Password).
         /// </summary>
-        /// <param name="userID">ID пользователя.</param>
-        /// <param name="user">Пользователь с изменненой информацией.</param>
-        /// <returns>Пользователя с редактированной информацией. В ином случае NotFound.</returns>
+        /// <param name="userID">User ID.</param>
+        /// <param name="user">User with modified information.</param>
+        /// <returns>User with edited information. Otherwise NotFound.</returns>
         [Route("api/Users/EditProfile")]
         public IHttpActionResult PutUser(int userID, UserEditData user)
         {
@@ -89,73 +89,7 @@ namespace LaboratoryAPI.Controllers
 
         }
 
-        /// <summary>
-        /// Получение списка сервисов у пользователя.
-        /// </summary>
-        /// <param name="userID">ID пользователя.</param>
-        /// <returns>При успешном запросе - список услуг у пользвателя.
-        /// При неуспешном запросе - NotFound.</returns>
-        [Route("api/Users/Services")]
-        public IHttpActionResult GetServices(int userID)
-        {
-            try
-            {
-                var user = db.Users.Find(userID);
-                return Ok(user.Services.ToList().ConvertAll(s => new ServiceModel(s)));
-            }
-            catch (Exception)
-            {
-                return NotFound();
-            }
-        }
-        /// <summary>
-        /// Добавление нового сервиcа в список пользователя.
-        /// </summary>
-        /// <param name="userID">ID пользователя.</param>
-        /// <param name="serviceID">ID сервиса.</param>
-        /// <returns>При успешном запросе - добавленную услугу.
-        /// При неуспешном запросе - NotFound.</returns>
-        [Route("api/Users/Services")]
-        public IHttpActionResult AddService(int userID, int serviceID)
-        {
-            try
-            {
-                var user = db.Users.Find(userID);
-                var service = db.Services.Find(serviceID);
-                user.Services.Add(service);
-                db.SaveChanges();
-                return Ok(service);
-            }
-            catch (Exception)
-            {
-                return NotFound();
-            }
-        }
-
-        /// <summary>
-        /// Удаление сервиcа из списка пользователя.
-        /// </summary>
-        /// <param name="userID">ID пользователя.</param>
-        /// <param name="serviceID">ID сервиса.</param>
-        /// <returns>При успешном запросе - удаленную услугу.
-        /// При неуспешном запросе - NotFound.</returns>
-        [Route("api/Users/Services")]
-        public IHttpActionResult DeleteService(int userID, int serviceID)
-        {
-            try
-            {
-                var user = db.Users.Find(userID);
-                var service = db.Services.Find(serviceID);
-                user.Services.Remove(service);
-                db.SaveChanges();
-                return Ok(service);
-            }
-            catch (Exception)
-            {
-                return NotFound();
-            }
-        }
-
+       
         protected override void Dispose(bool disposing)
         {
             if (disposing)

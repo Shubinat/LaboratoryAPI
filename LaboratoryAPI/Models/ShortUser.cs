@@ -6,16 +6,16 @@ using System.Web;
 namespace LaboratoryAPI.Models
 {
     /// <summary>
-    /// Сущность представляющяя пользователя для регистрации
+    /// Entity uses for user's authorization.
     /// </summary>
     public class ShortUser
     {
         /// <summary>
-        /// Логин пользователя
+        /// User login.
         /// </summary>
         public string Login { get; set; }
         /// <summary>
-        /// Пароль пользователя
+        /// User password.
         /// </summary>
         public string Password { get; set; }
     }

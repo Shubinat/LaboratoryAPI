@@ -7,52 +7,52 @@ using System.Web;
 namespace LaboratoryAPI.Models
 {
     /// <summary>
-    /// Сущность пользователя.
+    /// User model.
     /// </summary>
     public class UserModel
     {
         /// <summary>
-        /// ID пользователя.
+        /// ID user.
         /// </summary>
         public int ID { get; set; }
         /// <summary>
-        /// Логин.
+        /// Login.
         /// </summary>
         public string Login { get; set; }
         /// <summary>
-        /// Пароль.
+        /// Password.
         /// </summary>
         public string Password { get; set; }
         /// <summary>
-        /// Фамилия.
+        /// Surname.
         /// </summary>
         public string Surname { get; set; }
         /// <summary>
-        /// Имя.
+        /// Name.
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// Отчество.
+        /// Patronimyc.
         /// </summary>
         public string Patronimyc { get; set; }
         /// <summary>
-        /// Дата рождения.
+        /// Date of Birth.
         /// </summary>
         public System.DateTime BirthDate { get; set; }
         /// <summary>
-        /// Номер полиса.
+        /// Number of Policy.
         /// </summary>
         public string PolicyNumber { get; set; }
         /// <summary>
-        /// Номер паспорта.
+        /// Number of Passport.
         /// </summary>
         public string PassportNumber { get; set; }
         /// <summary>
-        /// Серия паспорта.
+        /// Seria of Passport.
         /// </summary>
         public string PassportSeria { get; set; }
         /// <summary>
-        /// Номер телефона.
+        /// Number of Phone.
         /// </summary>
         public string PhoneNumber { get; set; }
         /// <summary>

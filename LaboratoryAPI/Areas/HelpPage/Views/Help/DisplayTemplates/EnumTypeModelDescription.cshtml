@@ -1,11 +1,11 @@
 @using LaboratoryAPI.Areas.HelpPage.ModelDescriptions
 @model EnumTypeModelDescription
 
-<p>Возможные значения перечисления:</p>
+<p>Possible enum values:</p>
 
 <table class="help-page-table">
     <thead>
-        <tr><th>Название</th><th>Значение</th><th>Описание</th></tr>
+        <tr><th>Name</th><th>Value</th><th>Description</th></tr>
     </thead>
     <tbody>
         @foreach (EnumValueDescription value in Model.Values)

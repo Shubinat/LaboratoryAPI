@@ -11,12 +11,12 @@
 <div>
     <p>@description.Documentation</p>
 
-    <h2>Информация о запросе</h2>
+    <h2>Info about request</h2>
 
-    <h3>URI Параметры</h3>
+    <h3>URI Parmeters</h3>
     @Html.DisplayFor(m => m.UriParameters, "Parameters")
 
-    <h3>Body Параметры</h3>
+<h3>Body Parmeters</h3>
 
     <p>@Model.RequestDocumentation</p>
 
@@ -30,18 +30,18 @@
     }
     else
     {
-        <p>Пусто.</p>
+        <p>None.</p>
     }
 
     @if (Model.SampleRequests.Count > 0)
     {
-        <h3>Формат запроса</h3>
+        <h3>Request format</h3>
         @Html.DisplayFor(m => m.SampleRequests, "Samples")
     }
 
-    <h2>Информация об ответе</h2>
+    <h2>Information about response</h2>
 
-    <h3>Описание ресурсов</h3>
+    <h3>Resources's description</h3>
 
     <p>@description.ResponseDescription.Documentation</p>
 
@@ -55,12 +55,12 @@
     }
     else
     {
-        <p>Пусто.</p>
+        <p>None.</p>
     }
 
     @if (Model.SampleResponses.Count > 0)
     {
-        <h3>Формат ответа.</h3>
+        <h3>Response's format.</h3>
         @Html.DisplayFor(m => m.SampleResponses, "Samples")
     }
 
